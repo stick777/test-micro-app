@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./", // 基础路径
+        "target": "ESNext", // 编译成指定版本的 js 语法
+        "module": "ESNext", // 指定生成那个模块系统代码
+        "useDefineForClassFields": true,
+        "lib": ["ESNext", "DOM"], // 引用的功能库
+        "strict": true, // 启用所有严格类型检查选项。
+        "isolatedModules": true, // 指定是否将每个文件作为单独的模块，默认为 true，不可以和 declaration 同时设定
+        // "declaration": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true, // 通过导入内容创建命名空间，实现 CommonJS 和 ES 模块之间的互操作性
+        "moduleResolution": "node", // 用于选择模块解析策略，有 "node" 和 "classic" 两种类型
+        "forceConsistentCasingInFileNames": true,
+        "downlevelIteration": true, // 迭代器提供完全支持
+        "listEmittedFiles": false, // 打印出编译后生成文件的名字
+        "listFiles": false, // 编译过程中打印文件名
+        "removeComments": true, // 编译过程中需要引入的库文件的列表
+        "noImplicitAny": true, // 不允许使用隐式 any
+        "sourceMap": true, // sourceMap
+        "checkJs": false, // 是否检查和报告 js 文件中的错误
+        "allowJs": true, // 是否允许编译 js 文件
+        // "jsx": "preserve",
+        "typeRoots": [
+            "node_modules/@types",
+            "./src/types"
+        ],
+    },
+    "exclude": [ "node_modules", "build", "__tests__" ],
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+}
